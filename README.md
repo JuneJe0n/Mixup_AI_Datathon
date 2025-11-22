@@ -4,15 +4,18 @@
 [**Dohyeon Kim**](https://github.com/Dohyeon-Kim1) · [**Minsoo Kang**](https://github.com/Kongms002) · [**Junseok Kim**](https://github.com/koesnujmik) · [**Jiyoon Jeon**](https://github.com/JuneJe0n)
 </div>
 
-이 프로젝트는 Solar Pro 2 API를 활용하여 오로지 프롬프트만으로 한문/한글/영어가 섞인 문장을 현대 문장으로 변환하는 프롬프톤입니다. 모델 튜닝이 아닌 프롬프트 엔지니어링만으로 교정 태스크를 해결하는 것이 목표입니다.
+이 프로젝트는 Solar Pro 2 API를 활용하여 오로지 프롬프트만으로 한문/한글/영어가 섞인 문장을 현대 문장으로 변환하는 프롬프톤입니다. <br>
+모델 튜닝이 아닌 프롬프트 엔지니어링만으로 교정 태스크를 해결하는 것이 목표입니다.
 
-<h2>문제 정의</h2>
+<h2>Problem Definition</h2>
 
 고전 한국어(한문, 한글, 영어가 섞인 고문서)를 현대 한국어로 변환하는 AI 모델을 개발하고자 하였습니다. <br>
 GT와 유사하게 깔끔한 줄글로 만들고자 하면 llm as a judge의 score가 낮게 나오는 것을 확인하고, output을 최대한 풍부하게 생성하며  llm as a judge 평가 시스템을 겨냥한 프롬프트 엔지니어링 기법을 적용하였습니다.
 
-<h2>실험 방식</h2>
+<br>
 
+<h2>Experimental Methods</h2
+                            
 **1) Train Data Subset 기반의 효율적 실험 설계** <br>
 전체 데이터셋을 매번 사용하는 것은 시간적·자원적 비용이 크기 때문에, 데이터의 분포를 대표할 수 있는 Subset(부분 집합)을 전략적으로 추출하였습니다.  <br>
 이를 통해 실험 사이클을 단축시키고, 다양한 방법론을 빠르게 테스트하여 실험의 다양성을 확보했습니다. <br>
@@ -24,10 +27,9 @@ GT와 유사하게 깔끔한 줄글로 만들고자 하면 llm as a judge의 sco
 **3) 검증(Validation) 기반 프롬프트 최적화 (Iterative Refinement)** <br>
 실험의 각 단계마다 산출되는 결과를 실시간으로 모니터링하며 피드백 루프를 구축했습니다.<br>
 정량적 지표뿐만 아니라 모델의 생성 결과물을 정성적으로 확인하며, 모델이 의도대로 동작하도록 프롬프트 최적화(Prompt Optimization)를 반복적으로 수행하여 최종 성능을 극대화했습니다.
-
 <br>
 
-<h2> 📋 필수 파일 </h2>
+<h2> File tree </h2>
 
 ```
 code/
@@ -42,7 +44,7 @@ code/
     └── train_dataset.csv  # 학습 데이터 (여기에 넣으세요)
 ```
 
-<h2> 🚀 빠른 시작 </h2>
+<h2> 🚀 Getting Started </h2>
 
 <h3>1. 환경 설정</h3>
 
