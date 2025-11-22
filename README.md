@@ -27,6 +27,7 @@ GT와 유사하게 깔끔한 줄글로 만들고자 하면 llm as a judge의 sco
 **3) 검증(Validation) 기반 프롬프트 최적화 (Iterative Refinement)** <br>
 실험의 각 단계마다 산출되는 결과를 실시간으로 모니터링하며 피드백 루프를 구축했습니다.<br>
 정량적 지표뿐만 아니라 모델의 생성 결과물을 정성적으로 확인하며, 모델이 의도대로 동작하도록 프롬프트 최적화(Prompt Optimization)를 반복적으로 수행하여 최종 성능을 극대화했습니다.
+
 <br>
 
 <h2> File tree </h2>
@@ -46,7 +47,7 @@ code/
 
 <h2> 🚀 Getting Started </h2>
 
-<h3>1. 환경 설정</h3>
+<h3>1. Environment Setup</h3>
 
 ```bash
 # uv 설치 (이미 설치되어 있다면 생략)
@@ -56,7 +57,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv sync
 ```
 
-<h3>2. API 키 설정</h3>
+<h3>2. Configuring the API Key </h3>
 
 ```bash
 # .env 파일을 열어서 API 키 입력
@@ -65,13 +66,13 @@ UPSTAGE_API_KEY=your_actual_api_key_here
 
 Upstage API 키는 [https://console.upstage.ai/](https://console.upstage.ai/)에서 발급받을 수 있습니다.
 
-<h3>3. 데이터 준비</h3>
+<h3>3. Data Preperation</h3>
 
 `data/train_dataset.csv` 파일을 준비합니다. 파일은 다음 컬럼을 반드시 포함해야 합니다:
 - `original_sentence`: 변환이 필요한 원문
 - `answer_sentence`: 변환된 현대어 문장 (평가 시 사용)
 
-<h3>4. 변환 문장 생성</h3>
+<h3>4. Inference </h3>
 
 ```bash
 # 기본 실행
@@ -91,7 +92,7 @@ uv run python baseline_generate.py --input data/test_dataset.csv --output submis
 - `original_sentence`: 원문
 - `answer_sentence`: AI가 변환한 문장
 
-### 5. 평가
+### 5. Evaluation
 
 ```bash
 # 기본 실행
@@ -101,7 +102,7 @@ uv run python evaluate.py
 uv run python evaluate.py --true_df data/train_dataset.csv --pred_df submission.csv --output analysis.csv
 ```
 
-<h2>프로젝트 핵심 기능</h2>
+<h2> 📍 Core Features</h2>
 
 **1) System Prompt** <br>
 모델의 **역할(Role)을 구체적으로 지정**하였으며, 지시 사항이 누락되지 않도록 핵심 규칙을 블록(Block) 단위로 구조화했습니다. <br>
