@@ -69,7 +69,7 @@ Upstage API 키는 [https://console.upstage.ai/](https://console.upstage.ai/)에
 - `original_sentence`: 변환이 필요한 원문
 - `answer_sentence`: 변환된 현대어 문장 (평가 시 사용)
 
-<h3> 4. 변환 문장 생성</h3>
+<h3>4. 변환 문장 생성</h3>
 
 ```bash
 # 기본 실행
@@ -83,13 +83,6 @@ uv run python baseline_generate.py --input data/test_dataset.csv --output submis
 - `--input`: 입력 CSV 파일 경로 (original_sentence, id 컬럼 필수)
 - `--output`: 출력 CSV 파일 경로
 - `--model`: Upstage API 모델 선택 (solar-pro2 권장)
-
-**Upstage API 활용:**
-- **API 엔드포인트**: `https://api.upstage.ai/v1`
-- **인증 방식**: 환경변수 `UPSTAGE_API_KEY`를 통한 API 키 인증
-- **모델**: Solar Pro 2 사용으로 고품질 텍스트 생성
-- **Temperature**: 0.0으로 설정하여 결정론적 결과 보장
-- **Few-shot**: TF-IDF 기반 유사도 계산으로 최적의 예시 선택
 
 생성된 `submission.csv` 파일은 다음 컬럼을 포함합니다:
 - `id`: 원본 데이터의 ID
@@ -106,7 +99,7 @@ uv run python evaluate.py
 uv run python evaluate.py --true_df data/train_dataset.csv --pred_df submission.csv --output analysis.csv
 ```
 
-## 🚀 프로젝트 핵심 기능
+## 프로젝트 핵심 기능
 
 ### System Prompt 최적화
 
