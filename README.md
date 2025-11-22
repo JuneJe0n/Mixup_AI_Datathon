@@ -106,11 +106,6 @@ uv run python evaluate.py
 uv run python evaluate.py --true_df data/train_dataset.csv --pred_df submission.csv --output analysis.csv
 ```
 
-평가 결과:
-- 콘솔에는 Omission / Restoration / Naturalness / Accuracy 4개 카테고리의 평균 점수와 전체 평균 점수가 출력됩니다.
-- 각 샘플별 상세 평가 결과는 analysis.csv 파일로 저장됩니다.
-- 전체 평가 요약은 analysis_summary.txt 파일로 저장됩니다.
-
 ## 🚀 프로젝트 핵심 기능
 
 ### System Prompt 최적화
